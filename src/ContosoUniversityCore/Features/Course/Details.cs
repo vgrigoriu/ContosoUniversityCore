@@ -6,6 +6,8 @@
     using FluentValidation;
     using Infrastructure;
     using MediatR;
+    using System.Collections.Generic;
+    using Domain;
 
     public class Details
     {
@@ -28,6 +30,12 @@
             public string Title { get; set; }
             public int Credits { get; set; }
             public string DepartmentName { get; set; }
+            public List<Enrollment> Enrollments { get; set; }
+
+            public class Enrollment
+            {
+                public string StudentFullName { get; set; }
+            }
         }
 
         public class Handler : IAsyncRequestHandler<Query, Model>

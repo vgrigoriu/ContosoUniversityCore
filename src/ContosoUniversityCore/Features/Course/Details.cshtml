@@ -44,6 +44,13 @@
         </dd>
 
     </dl>
+    <label>Students</label>
+    <ul>
+        @foreach (var enrollment in Model.Enrollments)
+        {
+            <li>@(enrollment.StudentFullName)</li>
+        }
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
